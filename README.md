@@ -1,1 +1,3 @@
-Converting the plotly dash at https://hub.envr300.portal.eoas.ubc.ca/services/external/envr-300/monaloa/ to Jupyter notebook format.
+Converting the plotly dash at https://github.com/fhmjones/climate-maunaloa to Jupyter notebook format.
+
+Code is in a *.py file and imported in a one-line cell so code is not visible on in the notebook. 
