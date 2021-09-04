@@ -32,13 +32,13 @@ def predict_co2(slope, intercept, initial_date, prediction_date):
 # slope2_slider = widgets.FloatSlider(value = 1.65, min=0, max=3, step=0.05)
 # intercept1_slider = widgets.FloatSlider(value=312, min=250, max=320, step=0.25)
 # intercept2_slider = widgets.FloatSlider(value=312, min=250, max=320, step=0.25)
-slope1_slider = widgets.FloatSlider(value=2, min=0, max=3, step=0.05)
-slope2_slider = widgets.FloatSlider(value=1.65, min=0, max=3, step=0.05)
-intercept1_slider = widgets.FloatSlider(value=312, min=250, max=320, step=0.25)
-intercept2_slider = widgets.FloatSlider(value=312, min=250, max=320, step=0.25)
+slope1_slider = widgets.FloatSlider(value=1.4, min=0.5, max=2.0, step=0.05)
+slope2_slider = widgets.FloatSlider(value=2.4, min=2.0, max=3.0, step=0.01)
+intercept1_slider = widgets.FloatSlider(value=300, min=290, max=340, step=0.25)
+intercept2_slider = widgets.FloatSlider(value=290, min=220, max=300, step=0.25)
 signal_type_radiobuttons = widgets.RadioButtons(value='Seasonally adjusted data',
                                                 options=['Seasonally adjusted data', 'Raw data'])
-years_radiobuttons = widgets.RadioButtons(value='first 5 years', options=['first 5 years', 'last 5 years', 'All data'])
+years_radiobuttons = widgets.RadioButtons(value='All data', options=['first 5 years', 'last 5 years', 'All data'])
 slope1_label = widgets.Label("Slope (for first 5 years):")
 slope2_label = widgets.Label("Slope (for last 5 years):")
 intercept1_label = widgets.Label("Intercept (for first 5 years):")
@@ -76,8 +76,8 @@ def update_graph(line_slope_1st, line_intcpt_1st, line_slope_last, line_intcpt_l
             plot.update_xaxes(range=[1955, 2023])
             plot.update_yaxes(range=[310, 440])
 
-        predicted_co2_first = predict_co2(line_slope_1st, line_intcpt_1st, 1958, 2030)
-        predicted_co2_last = predict_co2(line_slope_last, line_intcpt_last, 1958, 2030)
+        predicted_co2_first = predict_co2(line_slope_1st, line_intcpt_1st, 1958, 2023)
+        predicted_co2_last = predict_co2(line_slope_last, line_intcpt_last, 1958, 2023)
         plot.layout.title = f"""Predicted CO2 for {2030} (based on linear fit for <b>first</b> 5 years): {predicted_co2_first:1.2f} ppm.<br>
     Predicted CO2 for {2030} (based on linear fit for <b>last</b> 5 years): {predicted_co2_last:1.2f} ppm."""
 
@@ -115,8 +115,8 @@ def initialize_graph(line_slope_1st, line_intcpt_1st, line_slope_last, line_intc
         plot.update_xaxes(range=[1955, 2023])
         plot.update_yaxes(range=[310, 440])
 
-    predicted_co2_first = predict_co2(line_slope_1st, line_intcpt_1st, 1958, 2030)
-    predicted_co2_last = predict_co2(line_slope_last, line_intcpt_last, 1958, 2030)
+    predicted_co2_first = predict_co2(line_slope_1st, line_intcpt_1st, 1958, 2023)
+    predicted_co2_last = predict_co2(line_slope_last, line_intcpt_last, 1958, 2023)
     plot.layout.title = f"""Predicted CO2 for {2030} (based on linear fit for <b>first</b> 5 years): {predicted_co2_first:1.2f} ppm.<br>
 Predicted CO2 for {2030} (based on linear fit for <b>last</b> 5 years): {predicted_co2_last:1.2f} ppm."""
 

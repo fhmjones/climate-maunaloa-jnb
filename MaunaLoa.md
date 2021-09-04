@@ -5,35 +5,27 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.11.2
+    jupytext_version: 1.11.4
 kernelspec:
   display_name: Python 3
   language: python
   name: python3
 ---
 
-+++ {"extensions": {"jupyter_dashboards": {"views": {"grid_default": {}, "report_default": {"hidden": true}}, "version": 1}}}
-
-* set limits on sliders that are "narrower", and more appropriate for each of the lines. Also initialize so both lines are visible but not "correct" (I think one is visible but the other starts "off screen").
-* consider a few more comments for those who will maintain this in the future. Include pointers to sources you used to figure out how - like the comment at "# for handling NaN's se... ".
-* Can you see what the options are for having the code cell "hidden" so that the user can see only the markdown cell and the output when the notebook is run? There may be a range of options for doing this in Jupyter Notebooks and we would taylor the app depending on its purpose. One like this would not involve students adjusting code, so it would be better if the code was not visible.
-
 +++ {"extensions": {"jupyter_dashboards": {"views": {"grid_default": {}, "report_default": {"hidden": false}}, "version": 1}}}
 
 ### Approximate linear models for CO2 at Mauna Loa, Hawaii
 #### Instructions 
-The plot below shows measurements of monthly-averaged CO2 concentrations (in ppm), 
-from Mauna Loa Observatory, spanning from 1958-2020. Initially, just the first 5 years of data are shown, but you can
-select whether to see only the first 5 years of data, only the last 5 years, or the whole data set.
-An adjustable linear trend (orange line) is also plotted. 
+This plot shows measurements of monthly-averaged CO2 concentrations (in ppm), 
+from Mauna Loa Observatory, spanning from 1958-2020. 
+Two adjustable linear trends are also plotted.
 
-Your task is to adjust the trend by changing its slope and intercept, 
-to fit the straight line so it can represent a linear model for the *first 5 years* of data. Then you will do the same
-to fit a linear model to the *most recent* 5 years of data. 
+Your task is to adjust the linear trends by changing their slopes and intercepts, so that one straight line, or "linear model", can approximate the *first 5 years* of data and the other straight line approximates the *most recent 5 years* of data. 
+
 Do your two linear models predict the same CO2 concentrations for the year 2030? 
-NOTE: the predicted value in ppm is given just above the graph.
+NOTE: the values in ppm predicted by both straight line models are given in the graph's two-line title.
 
-(NOTE: interactive graph controls appear when your mouse is over the graph.)
+Interactive graph controls appear when your mouse is over the graph. These
 
 ***
 
