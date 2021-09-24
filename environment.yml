@@ -1,0 +1,14 @@
+name: maunaloa
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.*
+  - pandas
+  - numpy
+  - matplotlib
+  - plotly
+  - ipywidgets
+  - jupyter=1.*
+  - jupytext
+  - pip
